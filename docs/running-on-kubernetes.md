@@ -1823,6 +1823,8 @@ Install Apache YuniKorn:
 helm repo add yunikorn https://apache.github.io/yunikorn-release
 helm repo update
 helm install yunikorn yunikorn/yunikorn --namespace yunikorn --version 1.1.0 --create-namespace --set embedAdmissionController=false
+# Access the Web UI
+kubectl port-forward svc/yunikorn-service 9889:9889 -n yunikorn
 ```
 
 The above steps will install YuniKorn v1.1.0 on an existing Kubernetes cluster.
